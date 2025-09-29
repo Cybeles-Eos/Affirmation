@@ -61,4 +61,23 @@ button{
    width: 160px;
    border-radius: 200px;
    -webkit-tap-highlight-color: transparent;
+   transition: all 600ms;
+}
+button:active{
+   height: 200px;
+   width: 200px;
+}  
+#placeholder {
+   font-size: 1.2rem;
+   opacity: 1;
+   transition: opacity 0.4s ease;
+}
+
+#placeholder.fade-out {
+   opacity: 0;
+}
+
+#btn:disabled {
+   opacity: 0.6;
+   cursor: not-allowed;
 }
