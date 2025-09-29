@@ -9,38 +9,49 @@ btn.addEventListener('click', () => {
 let lastAffirmation = "";
 
 function getAffirmation() {
-  fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://www.affirmations.dev/"), {
-    cache: "no-store"
-  })
-  .then(response => response.json())
-  .then(data => {
-    let result = JSON.parse(data.contents);
+   fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://www.affirmations.dev/"), {
+      cache: "no-store"
+   })
+   .then(response => response.json())
+   .then(data => {
+      let result = JSON.parse(data.contents);
 
-    if (result.affirmation === lastAffirmation) {
-      // If same as last, fetch again
-      getAffirmation();
-    } else {
-      lastAffirmation = result.affirmation;
+      if (result.affirmation === lastAffirmation) {
+         getAffirmation();
+      } else {
+         lastAffirmation = result.affirmation;
 
-      // fade out, then change text, then fade in
-      text.classList.add("fade-out");
+         // fade out, then change text, then fade in
+         text.classList.add("fade-out");
 
-      setTimeout(() => {
-        text.innerText = result.affirmation;
-        text.classList.remove("fade-out");
-        btn.disabled = false; // re-enable after showing new one
-      }, 600); // matches transition duration
-    }
-  })
-  .catch(err => {
-    console.error("Error fetching affirmation:", err);
-    btn.disabled = false;
-  });
+         setTimeout(() => {
+            text.innerText = result.affirmation;
+            text.classList.remove("fade-out");
+            btn.disabled = false; // re-enable after showing new one
+         }, 600); // matches transition duration
+      }
+   })
+   .catch(err => {
+      console.error("Error fetching affirmation:", err);
+      btn.disabled = false;
+   });
 }
 
+// Samples Without using proxy
 
-//   fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://www.affirmations.dev/"))
-//     .then(res => res.json())
-//     .then(data => console.log(data))
-//     .catch(err => console.error("Error:", err));
+// const pokemonAPI = "https://pokeapi.co/api/v2/pokemon/";
+// getData();
+// async function getData(){
+//    try{
+//       let name = "mewtwo";
 
+//       let response = await fetch(pokemonAPI + name);
+//       let data = await response.json();
+
+//       console.log(data);
+//       console.log(data.name);
+
+//    }catch(error){
+//       console.log(error);
+//    }
+// }

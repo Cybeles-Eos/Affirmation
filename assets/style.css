@@ -51,22 +51,26 @@ button{
    font-size: 18px;
    text-transform: capitalize;
    font-weight: 500;
-   outline: none;
-   user-select: none;
-   outline: none;
    border: none;
    background-color: #F0F0F0;
    cursor: pointer;
    height: 160px;
    width: 160px;
    border-radius: 200px;
+
+   outline: none;
+   user-select: none;
    -webkit-tap-highlight-color: transparent;
+   -webkit-touch-callout: none;
+   -webkit-user-select: none;
    transition: all 600ms;
 }
 button:active{
    height: 200px;
    width: 200px;
 }  
+
+/* Extras */
 #placeholder {
    font-size: 1.2rem;
    opacity: 1;
