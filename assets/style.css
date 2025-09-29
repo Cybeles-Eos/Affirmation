@@ -1,0 +1,64 @@
+*{
+   font-family: "Raleway", sans-serif;
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+body{
+   background-image: url(/assets/bg_b1.png);
+   background-position: right center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 100vh;
+   padding: 1rem;
+   width: 100%;
+}
+
+.affirmation-container{
+   max-width: 400px;
+   height: 300px;
+   /* background-color: aquamarine; */
+   margin: 0 auto;
+   margin-top: 4rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 1rem;
+}
+p{
+   font-size: 20px;
+   font-weight: 500; 
+   text-align: center;
+   line-height: 140%;
+   color: #231F20;
+}
+.btn--primary{
+   width: 200px;
+   height: 200px;
+   background-color: #F4F4F4;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 300px;
+   position: absolute;
+   bottom: 10%;
+   left: 50%;
+   transform: translateX(-50%);
+}
+button{
+   color: #8B8B8B;
+   font-size: 18px;
+   text-transform: capitalize;
+   font-weight: 500;
+   outline: none;
+   user-select: none;
+   outline: none;
+   border: none;
+   background-color: #F0F0F0;
+   cursor: pointer;
+   height: 160px;
+   width: 160px;
+   border-radius: 200px;
+   -webkit-tap-highlight-color: transparent;
+}
